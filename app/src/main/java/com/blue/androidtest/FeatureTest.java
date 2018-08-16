@@ -6,13 +6,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.blue.androidtest.Button.ButtonClick;
+import com.blue.androidtest.Button.ButtonContent;
+
 public class FeatureTest extends Activity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_feature_test);
-
+    private void DrawButtons() {
         // Add your buttons here
 
         //Example
@@ -23,6 +22,14 @@ public class FeatureTest extends Activity {
                 System.exit(0);
             }
         });
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_feature_test);
+
+        DrawButtons();
     }
 
 
@@ -46,13 +53,5 @@ public class FeatureTest extends Activity {
             }
         };
         GenerateButton(ctnt);
-    }
-
-    private interface ButtonContent extends View.OnClickListener {
-        String buttonText();
-    }
-
-    private interface ButtonClick {
-        void click();
     }
 }
